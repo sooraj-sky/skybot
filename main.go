@@ -6,7 +6,9 @@ userinit "skybot/user"
 )
 
 func main() {
+    currenWho := userinit.Whoami()
     userinit.UserInvok()
     speech := htgotts.Speech{Folder: "audio", Language: "en"}
-    speech.Speak("Welcome to Skywalks")
+    welcomeSpeach := "Hello" + currenWho + "Welcome to Skywalks" 
+    speech.Speak(welcomeSpeach)
 }

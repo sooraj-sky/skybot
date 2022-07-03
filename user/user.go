@@ -7,6 +7,16 @@ import (
 	"log"
 )
 
+func Whoami () string {
+	user, err := user.Current()
+    username := user.Username
+    if err != nil  {
+        log.Println("err")
+    }
+
+    return username
+}
+
 func UserInvok () {
 	newpath := filepath.Join(".", "skybot-userdata")
     err := os.MkdirAll(newpath, os.ModePerm)
