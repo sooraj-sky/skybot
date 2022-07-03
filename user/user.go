@@ -1,40 +1,40 @@
 package userinit
 
 import (
+	"log"
 	"os"
 	"os/user"
 	"path/filepath"
-	"log"
 )
 
-func Whoami () string {
+func Whoami() string {
 	user, err := user.Current()
-    username := user.Username
-    if err != nil  {
-        log.Println("err")
-    }
+	username := user.Username
+	if err != nil {
+		log.Println("err")
+	}
 
-    return username
+	return username
 }
 
-func UserInvok () {
+func UserInvok() {
 	newpath := filepath.Join(".", "skybot-userdata")
-    err := os.MkdirAll(newpath, os.ModePerm)
+	err := os.MkdirAll(newpath, os.ModePerm)
 
-    if err != nil  {
-        log.Println("err")
-    }
-  
-    user, err := user.Current()
-    username := user.Username
-    userDataFile := "skybot-userdata/" + username + ".json"
-    if err != nil  {
-        log.Println("err")
-    }
+	if err != nil {
+		log.Println("err")
+	}
 
-    f, err := os.OpenFile(userDataFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-    if f == nil {
-    log.Fatal(err)
-    }
+	user, err := user.Current()
+	username := user.Username
+	userDataFile := "skybot-userdata/" + username + ".json"
+	if err != nil {
+		log.Println("err")
+	}
+
+	f, err := os.OpenFile(userDataFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if f == nil {
+		log.Fatal(err)
+	}
 
 }
