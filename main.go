@@ -1,9 +1,13 @@
 package main
 
 import (
+	"bufio"
+	"fmt"
+	"os"
+	"skybot/os-exec"
 	userinit "skybot/user"
 	util "skybot/utility"
-	"fmt"
+	"strings"
 )
 
 func main() {
@@ -12,18 +16,21 @@ func main() {
 	welcomeSpeach := "Hello" + currenWho + "Welcome to Skywalks"
 	util.TriggerSpeachClean(welcomeSpeach)
 
-
-
 	for {
-		var input string
-
 		util.TriggerSpeachClean(util.RandomQueryText())
 		fmt.Println(" listening... ")
-		fmt.Scanln(&input)
+		scanner := bufio.NewScanner(os.Stdin)
+		if scanner.Scan() {
+			userCmdInput := scanner.Text()
+			if strings.HasPrefix(userCmdInput, "open") {
+				applicationName := strings.Fields(userCmdInput)
+				skybotexec.CommandExecutor(applicationName[1])
+			}
+			if userCmdInput == "exit" {
+				util.TriggerSpeachClean("Thank you")
+				break
+			}
+		}
 
-		if input == "exit" {
-			util.TriggerSpeachClean("Thank you")
-			break;
-		} 
 	}
 }
