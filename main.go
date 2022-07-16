@@ -1,22 +1,29 @@
 package main
 
 import (
-	"github.com/hegedustibor/htgo-tts"
-	"log"
-	cleaner "skybot/cleaner"
 	userinit "skybot/user"
+	util "skybot/utility"
+	"fmt"
 )
 
 func main() {
 	currenWho := userinit.Whoami()
 	userinit.UserInvok()
-	speech := htgotts.Speech{Folder: "audio", Language: "en"}
 	welcomeSpeach := "Hello" + currenWho + "Welcome to Skywalks"
-	speech.Speak(welcomeSpeach)
+	util.TriggerSpeachClean(welcomeSpeach)
 
-	// Removing Audio Directory
-	err := cleaner.RemoveAudioFIles("audio/*")
-	if err != nil {
-		log.Fatalf("Error removing files: %+v", err)
+
+
+	for {
+		var input string
+
+		util.TriggerSpeachClean(util.RandomQueryText())
+		fmt.Println(" listening... ")
+		fmt.Scanln(&input)
+
+		if input == "exit" {
+			util.TriggerSpeachClean("Thank you")
+			break;
+		} 
 	}
 }
