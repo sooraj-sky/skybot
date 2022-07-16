@@ -4,10 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"skybot/os-exec"
 	userinit "skybot/user"
 	util "skybot/utility"
-	"strings"
+	"skybot/wordprocessing"
 )
 
 func main() {
@@ -22,15 +21,7 @@ func main() {
 		scanner := bufio.NewScanner(os.Stdin)
 		if scanner.Scan() {
 			userCmdInput := scanner.Text()
-			if strings.HasPrefix(userCmdInput, "open") {
-				applicationName := strings.Fields(userCmdInput)
-				skybotexec.CommandExecutor(applicationName[1])
-			}
-			if userCmdInput == "exit" {
-				util.TriggerSpeachClean("Thank you")
-				break
-			}
+			wordprocessing.NaturalLanguageProcessor(userCmdInput)			
 		}
-
 	}
 }
