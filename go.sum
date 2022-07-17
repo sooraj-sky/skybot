@@ -1,2 +1,8 @@
 github.com/hegedustibor/htgo-tts v0.0.0-20211114121522-d6dac668e0be h1:0AbgAT4TmNa3muV8QFpawQ5l03GiuFM7k6GbqwrdSUY=
 github.com/hegedustibor/htgo-tts v0.0.0-20211114121522-d6dac668e0be/go.mod h1:Uqnv3qFrs2WtaeO2/+PQ35x4HdD4u2ZAX/PcQEEP5VY=
+github.com/patmigliaccio/go-wiki-api/wikiclient v0.0.0-20200807011947-ac6a25d24c8b h1:hLODPyzwuEkgOOrN0daRKgHIjp86NmMEDGg+b9n5FWg=
+github.com/patmigliaccio/go-wiki-api/wikiclient v0.0.0-20200807011947-ac6a25d24c8b/go.mod h1:88/GJ8lmsriFE/3wVOZRE4jltpACNcYkNQcdMeCIV5w=
+github.com/patmigliaccio/go-wikimedia v0.0.0-20181028013539-dcae5fa04e3d h1:Y0MxCGw5MHILore/CKUZLKilB1URFJy6xxMejBr+3Wg=
+github.com/patmigliaccio/go-wikimedia v0.0.0-20181028013539-dcae5fa04e3d/go.mod h1:yXjO7yuHNWUmq2pDvPdEc8GDnxiC9PeXl/pirLcmCkY=
+github.com/pmylund/go-wikimedia v0.0.0-20130802042651-ca2b93c3aea0 h1:38F/z7slbRYjDkfiBL9AZSSuM5Vlp296eyuf7OTqTCU=
+github.com/pmylund/go-wikimedia v0.0.0-20130802042651-ca2b93c3aea0/go.mod h1:hsNsQQd9xarIblXsiwDykpoksCdoK1aRLMjuOHA8BVM=
