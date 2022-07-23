@@ -1,23 +1,27 @@
 package wordprocessing
 
 import (
-	"strings"
-	"skybot/os-exec"
-	"skybot/wikki-search"
-	"os"
-	util "skybot/utility"
 	"fmt"
 	"net/url"
+	"os"
+	"skybot/os-exec"
+	util "skybot/utility"
+	skyweather "skybot/weather-search"
+	"skybot/wikki-search"
+	"strings"
 )
 
 func NaturalLanguageProcessor(inputword string) {
 
-
 	switch {
 	case strings.HasPrefix(inputword, "open"):
-		fmt.Println(strings.HasPrefix(inputword, "open"))
 		applicationName := strings.Fields(inputword)
 		skybotexec.CommandExecutor(applicationName[1])
+
+	case strings.HasPrefix(inputword, "temperature"):
+		applicationName := strings.Fields(inputword)
+		skyweather.WetherSearch(applicationName[2])
+
 	case strings.HasPrefix(inputword, "search"):
 		applicationName := strings.Fields(inputword)
 		w, err := wikimedia.New("http://en.wikipedia.org/w/api.php")
@@ -38,15 +42,11 @@ func NaturalLanguageProcessor(inputword string) {
 			resultSecond := v.Extract[200:400]
 			util.TriggerSpeachClean(result)
 			util.TriggerSpeachClean(resultSecond)
-			
+
 		}
-	  
 
-
-
-			
-	case inputword == "exit" :
-			util.TriggerSpeachClean("Thank you")
+	case inputword == "exit":
+		util.TriggerSpeachClean("Thank you")
 		os.Exit(3)
 	}
 

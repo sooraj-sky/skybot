@@ -21,7 +21,7 @@ func main() {
 		scanner := bufio.NewScanner(os.Stdin)
 		if scanner.Scan() {
 			userCmdInput := scanner.Text()
-			wordprocessing.NaturalLanguageProcessor(userCmdInput)			
+			wordprocessing.NaturalLanguageProcessor(userCmdInput)
 		}
 	}
 }

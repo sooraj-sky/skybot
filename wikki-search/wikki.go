@@ -143,9 +143,8 @@ func New(apiUrl string) (*Wikimedia, error) {
 		return nil, err
 	}
 	w := &Wikimedia{
-		Url: u,
-		StripHtml:  true,
-
+		Url:       u,
+		StripHtml: true,
 	}
 	return w, nil
 }
