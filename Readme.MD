@@ -2,5 +2,7 @@
 ## AI for Everyone
 We are planning to Create a Opensource AI for Everyone
 ## Prerequisites
-os:ubuntu
+
+Tested OS :ubuntu
+
 $ sudo apt install mplayer
